@@ -1,0 +1,21 @@
+<form method="post">
+    {% csrf_token %}
+    {% if messages %}
+    {% for m in messages %}
+    <h2 style="color: aquamarine;">{{m}}</h2>
+    {% endfor %}
+    {% endif %}
+    <label>To</label>
+    <input type="email"name="em"value={{email}}>
+    <br>
+    <br>
+    <label>Subject</label>
+    <input type="text"name="sb">
+    <br>
+    <br>
+    <label>Message</label>
+    <textarea name="msg"></textarea>
+    <br>
+    <br>
+    <button type="submit">Send</button>
+</form>

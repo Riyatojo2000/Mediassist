@@ -1,0 +1,22 @@
+ {% load static %}
+<link rel="stylesheet"href="{% static 'css/card.css' %}">
+<!--<script src="{% static 'js/card.js' %}"></script>-->
+<form>
+
+    <h1 class="title">Hover over the cards</h1>
+
+{% for m in meds %}
+<div class="cards">
+  <img src="{{m.pimg.url}}" height="200px" width="200px">
+   <h2>{{m.pnm}}</h2>
+   <h3>{{m.prc}}</h3>
+   <p>{{m.des}}</p>
+   <a href="/cart?cid={{m.id}}"><img src="{% static 'images/cart.png' %}"style="width:50px;height:50px;"
+    <a href="/cart?cid={{m.id}}"><img src="{% static 'images/cart.png' %}"style="width:50px;height:50px;"
+</div>
+{% endfor %}
+
+
+
+      
+ 

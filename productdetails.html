@@ -1,0 +1,21 @@
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>MEDICINE IMAGE</label>
+    <input type="file" name="ji">
+    <br>
+    <br>
+    <label>MEDICINE NAME</label>
+    <input type="text" name="jn">
+    <br>
+    <br>
+    <label>PRICE</label>
+    <input type="number" name="jw">
+    <br>
+    <br>
+    <label>MEDICINE DESCRIPTION</label>
+    <textarea name="des"></textarea>
+    <br>
+    <br>
+    <button type="submit">ENTER</button>
+
+</form>

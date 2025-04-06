@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet"href="{% static 'css/card.css' %}">
+<!--<script src="{% static 'js/card.js' %}"></script>-->
+<form>
+
+    <h1 class="title">Hover over the cards</h1>
+
+{% for m in cart %}
+<div class="cards">
+  <img src="{{m.pimg.url}}" height="200px" width="200px">
+   <h2>{{m.pnm}}</h2>
+   <h3>{{m.prc}}</h3>
+   <p>{{m.des}}</p>
+   <!-- <button><a href="/cart?cid={{m.id}}">Add to cart</a></button> -->
+</div>
+{% endfor %}
+
+
+
+      
+ 

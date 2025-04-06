@@ -1,0 +1,37 @@
+{% load static %}
+<style>
+    body
+    {
+        background-size: cover;
+    }
+</style>
+<body style="background-image: url({%static 'images/1.jpg' %}); ">
+<form>
+    <center>
+    <table border="2px" width="1000px" height="400px">
+        <h1>REGISTERED USERS</h1>
+        <thead>
+            <th>Full Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr>
+                <td>{{m.fnm}}</td>
+                <td>{{m.mob}}</td>
+                <td>{{m.eml}}</td>
+                <td><button><a href="/AdminApp/edit?idn={{m.id}}">Edit</a></button></td>
+                <td><button><a href="/AdminApp/delete?idn={{m.id}}">Delete</a></button></td>
+                <td><button><a href="/AdminApp/notification?em={{m.eml}}">Email</a></button></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+</form>
+</body>

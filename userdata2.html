@@ -1,0 +1,35 @@
+{% load static %}
+<style>
+    body
+    {
+        background-size: cover;
+    }
+</style>
+<body style="background-image: url({%static 'images/1.jpg' %}); ">
+<form method="post"action="/AdminApp/update">
+    {% csrf_token %}
+    <center>
+    <table border="2px" width="500px" height="100px">
+        <h1>REGISTERED USERS</h1>
+        <thead>
+            <th>Full Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Update</th>
+        </thead>
+        <tbody>
+            {% for m in user %}
+            <tr>
+                <td><input type="text"value="{{m.fnm}}"name="fn">
+                    <input type="text"value="{{m.id}}"name="id1"hidden>
+                </td>
+                <td><input type="text"value="{{m.mob}}"name="mb"></td>
+                <td><input type="text"value="{{m.eml}}"name="em"></td>
+                <td><button>Update</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+</form>
+</body>
